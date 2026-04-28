@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # ParcialMisw4104
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.3.
@@ -26,7 +25,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
 # ParcialMISW4104
 Repositorio Parcial Conceptos basicos de ingeniería de software para la web - Jhon Alejandro Angel Rodriguez
->>>>>>> 57d1659e0b42571e8dcf8149848d6d5d2c4d0f31
