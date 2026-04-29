@@ -12,7 +12,6 @@
 </head>
 <body class="font-body-md antialiased overflow-x-hidden min-h-screen">
 
-<!-- Main Content Canvas -->
 <main *ngIf="repositorio" class="pt-24 pb-12 px-6 max-w-5xl mx-auto">
 
   <!-- Botón volver -->
@@ -26,7 +25,6 @@
     </button>
   </div>
 
-  <!-- Header -->
   <section class="mb-12 flex flex-col items-center text-center">
 
     <div class="mb-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-[#334155]">
@@ -34,7 +32,6 @@
       <span class="text-slate-400 text-sm">ID: {{ repositorio.id }}</span>
     </div>
 
-    <!-- 🔥 LOGO + NOMBRE -->
     <div class="flex items-center gap-4 mb-4">
       <div class="bg-black/30 p-3 rounded-full">
         <img
@@ -54,10 +51,8 @@
 
   </section>
 
-  <!-- Cards -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-    <!-- Lenguaje -->
     <div class="bg-[#1e293b] border border-[#334155] p-6 rounded-lg flex flex-col gap-3">
 
       <div class="flex items-center justify-between text-slate-500">
@@ -65,7 +60,6 @@
         <span class="material-symbols-outlined text-blue-400">code</span>
       </div>
 
-      <!-- 🔥 LOGO + TEXTO -->
       <div class="flex items-center gap-3">
         <img
           [src]="getLogo(repositorio.language)"
@@ -78,7 +72,6 @@
 
     </div>
 
-    <!-- Stars -->
     <div class="bg-[#1e293b] border border-[#334155] p-6 rounded-lg flex flex-col gap-3">
 
       <div class="flex items-center justify-between text-slate-500">
@@ -92,7 +85,6 @@
 
     </div>
 
-    <!-- Fecha -->
     <div class="bg-[#1e293b] border border-[#334155] p-6 rounded-lg flex flex-col gap-3">
 
       <div class="flex items-center justify-between text-slate-500">
