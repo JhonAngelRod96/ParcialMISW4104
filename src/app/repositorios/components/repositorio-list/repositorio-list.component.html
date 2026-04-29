@@ -1,0 +1,70 @@
+<main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+
+<!-- Sección inicial de información sobre usuarios -->
+<header class="mb-12">
+<h1 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter text-primary text-glow mb-4">
+                Repositorios Github
+            </h1>
+<p class="text-xl text-textMuted max-w-2xl leading-relaxed">
+                Consulta el catálogo completo de repositorios registrados en la plataforma.
+            </p>
+</header>
+
+<!-- Información de cada Usuario -->
+<div class="brutalist-grid gap-4">
+   <div *ngFor="let repositorio of repositorios"
+       [routerLink]="['/repositorios', repositorio.id]"
+       class="group relative bg-surface hover:bg-surface-bright transition-all duration-500 flex flex-col">
+
+    <div class="h-40 flex items-center justify-center bg-surface-container-lowest">
+        <div class="bg-black/30 p-4 rounded-full">
+            <img
+                [src]="getLogo(repositorio.language)"
+                class="w-16 h-16 object-contain transition-all duration-300"
+            />
+        </div>
+    </div>
+
+    <div class="p-6 flex flex-col flex-grow">
+
+      <div class="mb-4">
+        <!-- <span class="inline-block text-[10px] font-headline font-bold tracking-widest text-primary uppercase mb-1">
+          {{ repositorio.name }}
+        </span> -->
+
+        <h3 class="font-headline text-2xl font-black uppercase tracking-tight text-white group-hover:text-primary">
+          {{ repositorio.name }}
+        </h3>
+      </div>
+
+      <div class="space-y-2 mb-8 text-sm text-textMuted">
+
+        <!-- <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-xs">Rol:</span>
+          <span>{{ repositorio.description }}</span>
+        </div> -->
+
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-xs">Fecha Creación:</span>
+          <span>{{ repositorio.createdAt }}</span>
+        </div>
+
+        <!-- <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-xs">Repositorio:</span>
+          <span class="font-bold text-on-surface">
+            {{ repositorio.repoIds.length }} repositorio(s) registrado(s)
+          </span>
+        </div> -->
+
+      </div>
+
+      <!-- Botón para buscar información adicional de los directores -->
+      <!-- <button class="mt-auto w-full py-4 font-headline font-extrabold uppercase tracking-widest text-xs bg-[#adc6ff] text-black">
+        Ver Información
+      </button> -->
+
+    </div>
+  </div>
+</div>
+
+</main>
