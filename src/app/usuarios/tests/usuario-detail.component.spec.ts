@@ -26,4 +26,25 @@ describe('UsuarioDetailComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should display user data', () => {
+    component.usuario = {
+      id: 1,
+      username: 'user1',
+      name: 'User One',
+      email: 'user1@mail.com',
+      avatarUrl: 'https://i.pravatar.cc/150?img=1',
+      role: 'admin',
+      location: 'Bogotá',
+      repoIds: [101, 102]
+    };
+
+    fixture.detectChanges();
+
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.textContent).toContain('User One');
+    expect(compiled.textContent).toContain('user1@mail.com');
+  });
+
 });

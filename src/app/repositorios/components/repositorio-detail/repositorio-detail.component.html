@@ -49,6 +49,25 @@
       {{ repositorio.description }}
     </p>
 
+    <div *ngIf="usuario" class="mt-8 flex items-center gap-4 bg-[#1e293b] p-4 rounded-lg border border-[#334155]">
+
+        <img 
+            [src]="usuario.avatarUrl"
+            class="w-12 h-12 rounded-full object-cover border border-white/20"
+        />
+
+        <div>
+            <p class="text-sm text-slate-400">Propietario:</p>
+            <p class="text-white font-bold">
+            {{ usuario.name }}
+            </p>
+            <p class="text-xs text-slate-400">
+            &#64;{{ usuario.username }}
+            </p>
+        </div>
+
+    </div>
+
   </section>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -75,7 +94,7 @@
     <div class="bg-[#1e293b] border border-[#334155] p-6 rounded-lg flex flex-col gap-3">
 
       <div class="flex items-center justify-between text-slate-500">
-        <span class="text-xs uppercase tracking-wider">Stars</span>
+        <span class="text-xs uppercase tracking-wider">Popularidad</span>
         <span class="material-symbols-outlined text-yellow-400">star</span>
       </div>
 
@@ -95,10 +114,6 @@
       <div class="text-2xl font-bold text-white">
         {{ repositorio.createdAt }}
       </div>
-
-      <span class="text-sm text-slate-400">
-        Owner ID: {{ repositorio.ownerId }}
-      </span>
 
     </div>
 

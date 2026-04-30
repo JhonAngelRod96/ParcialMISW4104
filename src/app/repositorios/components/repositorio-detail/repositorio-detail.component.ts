@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule, Router } from '@angular/router';
 import { RepositorioService } from '../../services/repositorio.service';
 import { Repositorio } from '../../models/repositorio.model';
+import { Usuario } from '../../../usuarios/models/usuario.model';
+import { UsuarioService } from '../../../usuarios/services/usuario.service';
 
 @Component({
   selector: 'app-repositorio-detail',
@@ -13,10 +15,12 @@ import { Repositorio } from '../../models/repositorio.model';
 })
 export class RepositorioDetailComponent {
   repositorio!: Repositorio;
+  usuario!: Usuario;
 
   constructor(
     private route: ActivatedRoute,
     private repoService: RepositorioService,
+    private usuarioService: UsuarioService,
     private router: Router
   ) {}
 
@@ -27,9 +31,13 @@ export class RepositorioDetailComponent {
   }
 
     // Consumir API con información especifica del repositorio
-  loadRepo(id:number) {
-    this.repoService.getRepositorios().subscribe(data => {
-      this.repositorio = data.find(r => r.id === id)!;
+  loadRepo(id: number) {
+    this.repoService.getRepositorios().subscribe(repos => {
+      this.repositorio = repos.find(r => r.id === id)!;
+
+      this.usuarioService.getUsuarios().subscribe(users => {
+        this.usuario = users.find(u => u.id === this.repositorio.ownerId)!;
+      });
     });
   }
 
